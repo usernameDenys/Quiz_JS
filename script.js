@@ -123,6 +123,7 @@ valider.addEventListener("click", () => {
     if (input.checked && input.value === correctAnswer) {
       label.style.backgroundColor = "lightgreen";
       score++;
+      valider.disabled = true;
     }
     if (input.checked && input.value !== correctAnswer) {
       label.style.backgroundColor = "#FFB3B3";
@@ -136,6 +137,7 @@ suivant.addEventListener("click", () => {
 
   if (currentQuestionIndex < content.length) {
     updateContent(currentQuestionIndex);
+    valider.disabled = false;
 
     valider.style.display = "block";
     suivant.style.display = "none";
